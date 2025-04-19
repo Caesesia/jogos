@@ -26,15 +26,33 @@ class Start(commands.Cog):
         await asyncio.sleep(3)
         await ctx.send("------------------------")
         await asyncio.sleep(1)
-        await ctx.send(self.scenes["synopsis"])
+
+        embed_synopsis = discord.Embed(
+                title = "📖 La Vengeance d'Aris",
+                description = self.scenes["synopsis"],
+                color = discord.Color.dark_gold()
+            )
+        await ctx.send(embed = embed_synopsis)
         await asyncio.sleep(30)
         await ctx.send("------------------------")
         await asyncio.sleep(1)
-        await ctx.send(self.scenes["persos"])
+
+        embed_persos = discord.Embed(
+                title = "🛡️ Les Compagnons d'Aris",
+                description = self.scenes["persos"],
+                color = discord.Color.purple()
+            )
+        await ctx.send(embed = embed_persos)
         await asyncio.sleep(15)
         await ctx.send("------------------------")
         await asyncio.sleep(1)
-        await ctx.send(self.scenes["fin"])
+
+        embed_fin = discord.Embed(
+                title = "⚔️ Le Début de la Fin",
+            description=self.scenes["fin"],
+            color=discord.Color.red()
+        )
+        await ctx.send(embed = embed_fin)
 
 
 
