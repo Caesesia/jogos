@@ -10,12 +10,12 @@ TOKEN = os.getenv("TOKEN")
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(command_prefix = ".", intents = intents, help_command = None)
+bot = commands.Bot(command_prefix = "!", intents = intents, help_command = None)
 
 @bot.event
 async def on_ready():
     print(f'Bot {bot.user} au rapport.')
-    #await bot.load_extension("")
+    await bot.load_extension("cogs.story")
     #await bot.load_extension("")
     #await bot.load_extension("")
 

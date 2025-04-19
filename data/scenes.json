@@ -1,0 +1,11 @@
+{
+	"synopsis": "Dans un royaume divisé en deux, règne le roi Garnatus, un tyran au sang-froid, totalement insensible à la souffrance de son peuple. Obèse et cruel, il passe son temps à aspirer l’âme des jeunes enfants pour ensuite les réduire en esclavage. Le royaume est scindé en deux camps : d’un côté, les partisans du roi et les esclaves ; de l’autre, un petit groupe de résistants réfugiés derrière les hautes montagnes. Parmi les enfants capturés par les gardes du roi se trouvait Aris. Mais alors qu’il n’était encore qu’un enfant, il parvint à s’échapper. Des années plus tard, la Résistance s'affaiblit sous les attaques répétées de l’armée royale. Aris, désormais adulte, fait partie des rares survivants du mouvement rebelle. Convaincu qu’il est temps d’agir, il décide de former un groupe pour diriger une petite armée et renverser le pouvoir tyrannique de Garnatus.",
+	"persos": "Il s’entoure alors de cinq alliés de confiance :\n\n\t• REDACTED, l’oracle, qui lui confie cette mission.\n\n\t• REDACTED, une magicienne hors pair, qui agira également comme scribe durant l’aventure.\n\n\t• REDACTED, expert en tactiques de combat.\n\n\t• REDACTED, ancienne membre du royaume, aujourd’hui espionne pour la Résistance.\n\n\t• REDACTED, le plus fort et féroce guerrier du royaume.\n\n",
+	"fin": "À peine l’équipe formée, une attaque d’une ampleur inédite frappe l’un des plus grands campements de la Résistance. Le carnage est total : des centaines de personnes perdent la vie. C’est, de loin, l’assaut le plus sanglant et le plus meurtrier que le royaume ait connu depuis des décennies. Sous le choc, le groupe d’Aris comprend que le temps n’est plus aux hésitations. Il est temps de passer à l’action. Ils se mettent donc en route vers le cœur du royaume, décidés à faire tomber Garnatus une bonne fois pour toutes.",
+	"scenes": [
+		{
+			"id": "intro",
+			"desc": ""
+		}
+	]
+}
