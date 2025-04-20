@@ -31,7 +31,8 @@ async def on_message(message):
 
     if message.content.startswith(bot.command_prefix):
         return
-    if message.content in ["O", "N"]:
-        await vote(message)
+    
+    if message.content.strip().upper() in ["O", "N"]:
+        await vote(bot, message)
 
 bot.run(TOKEN)

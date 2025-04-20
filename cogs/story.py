@@ -54,18 +54,7 @@ class Start(commands.Cog):
         await ctx.send("(O) - Poursuivre\n(N) - Arrêt")
         #await asyncio.sleep(10)
         
-#         resultat = []
-#         reponse = message.content.lower()
-#         resultat = resultat.append(reponse)
-# 
-#         if resultat.count("O") > resultat.count("N"):
-#             
-#             embed_next = discord.Embed(
-#                     title = "*Clairière*",
-#                     description = self.scenes["intro"][0]["desc"],
-#             )
-# 
-#             await ctx.send(embed = embed_next)
+
 
 # ----------------------------------------------------------------------
 # AJOUTE LES COMMANDES POUR UTILISATION
