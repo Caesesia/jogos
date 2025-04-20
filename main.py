@@ -3,6 +3,9 @@ from dotenv import load_dotenv, find_dotenv
 
 import os
 import discord
+import asyncio
+
+from utils.vote import vote
 
 load_dotenv()
 TOKEN = os.getenv("TOKEN")
@@ -28,7 +31,7 @@ async def on_message(message):
 
     if message.content.startswith(bot.command_prefix):
         return
-
-
+    if message.content in ["O", "N"]:
+        await vote(message)
 
 bot.run(TOKEN)
