@@ -23,7 +23,7 @@ async def vote(bot, message):
     voters.add(message.author.id)
     votes.append(reponse)
  
-    await asyncio.sleep(5)
+    await asyncio.sleep(10)
 
     if votes.count("O") > votes.count("N"):
         await message.channel.send(f"✅ La majorité souhaite **{action}** !")
