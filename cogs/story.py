@@ -31,7 +31,7 @@ class Start(commands.Cog):
                 color = discord.Color.dark_gold()
             )
         await ctx.send(embed = embed_synopsis)
-        #await asyncio.sleep(30)
+        await asyncio.sleep(15)
 
         embed_persos = discord.Embed(
                 title = "🛡️ Les Compagnons d'Aris",
@@ -39,7 +39,7 @@ class Start(commands.Cog):
                 color = discord.Color.purple()
             )
         await ctx.send(embed = embed_persos)
-        #await asyncio.sleep(15)
+        await asyncio.sleep(10)
 
         embed_fin = discord.Embed(
                 title = "⚔️ Le Début de la Fin",
