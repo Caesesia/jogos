@@ -22,9 +22,6 @@ class Start(commands.Cog):
 
     @commands.command(help = "Démarre le RPG")
     async def on(self, ctx):
-        await ctx.send(f"*Synopsis...*\n")
-        await asyncio.sleep(3)
-
         embed_synopsis = discord.Embed(
                 title = "📖 La Vengeance d'Aris",
                 description = self.scenes["synopsis"],
@@ -51,7 +48,7 @@ class Start(commands.Cog):
         await asyncio.sleep(3)
         await ctx.send("Démarrer le jeu ?")
         await asyncio.sleep(1)
-        await ctx.send("(O) - Poursuivre\n(N) - Arrêt")
+        await ctx.send("(O) - Poursuivre\n(N) - Arrêter")
         
 
 

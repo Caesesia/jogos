@@ -8,7 +8,7 @@ with open("data/scenes.json", "r", encoding="utf-8") as f:
 votes = []
 voters = set()
 
-async def vote(bot, message):
+async def vote(bot,  message):
     
     global votes, voters, scenes
     
@@ -25,13 +25,14 @@ async def vote(bot, message):
  
     await asyncio.sleep(10)
 
+    embed_next = discord.Embed(
+            title = "Clairière",
+            description = scenes["scenes"][0]["desc"],
+            color = discord.Color.green()
+    )
+
     if votes.count("O") > votes.count("N"):
         await message.channel.send(f"✅ La majorité souhaite **{action}** !")
-        embed_next = discord.Embed(
-                title = "Clairière",
-                description = scenes["scenes"][0]["desc"],
-                color = discord.Color.green()
-        )
         await message.channel.send(embed = embed_next)
         return
 
@@ -39,9 +40,13 @@ async def vote(bot, message):
         await message.channel.send(f"🛑 La majorité souhaite **{action}**.")
         await bot.close()
 
-    else:
+    elif votes.count("O") == votes.count("N"):
         await message.channel.send("🤔 Égalité ! Le jeu **continue** par défaut.")
         await message.channel.send(embed = embed_next)
+        return
+    else:
+        await message.channel.send("erreur astagfirullah!!!")
+        print("mauvais vote sah")
         return
 
     votes.clear()
