@@ -7,11 +7,13 @@ with open("data/scenes.json", "r", encoding="utf-8") as f:
 
 votes = []
 voters = set()
+timer = False
+
 
 async def vote(bot,  message):
     
-    global votes, voters, scenes
-    
+    global votes, voters, scenes, timer
+
     reponse = message.content.strip().upper()
     action = "poursuivre" if reponse == "O" else "arrêter"
 
@@ -22,7 +24,16 @@ async def vote(bot,  message):
     await message.channel.send(f"{message.author.name} souhaite {action}.")
     voters.add(message.author.id)
     votes.append(reponse)
- 
+
+    if not timer:
+        timer = True
+        asyncio.create_task(result(bot, message, reponse, action))
+
+
+async def result(bot, message, reponse, action):
+    
+    global votes, voters, scenes
+
     await asyncio.sleep(10)
 
     embed_next = discord.Embed(
@@ -30,11 +41,15 @@ async def vote(bot,  message):
             description = scenes["scenes"][0]["desc"],
             color = discord.Color.green()
     )
+    
+    await message.channel.send(f"{votes.count('O')} vote[s] pour continuer.\n"
+        f"{votes.count('N')} vote[s] pour arrêter.")
+
+    await asyncio.sleep(3)
 
     if votes.count("O") > votes.count("N"):
         await message.channel.send(f"✅ La majorité souhaite **{action}** !")
         await message.channel.send(embed = embed_next)
-        return
 
     elif votes.count("O") < votes.count("N"):
         await message.channel.send(f"🛑 La majorité souhaite **{action}**.")
@@ -43,11 +58,8 @@ async def vote(bot,  message):
     elif votes.count("O") == votes.count("N"):
         await message.channel.send("🤔 Égalité ! Le jeu **continue** par défaut.")
         await message.channel.send(embed = embed_next)
-        return
     else:
         await message.channel.send("erreur astagfirullah!!!")
-        print("mauvais vote sah")
-        return
 
     votes.clear()
     voters.clear()
